@@ -18,14 +18,6 @@ app.use(
 );
 app.use(express.json());
 
-// Serve static files from React
-// Serve static files from React's build folder
-app.use(express.static(path.join(__dirname, "build")));
-
-// Handle any other routes by serving index.html (for React Router)
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
-});
 
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
